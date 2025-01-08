@@ -1,0 +1,906 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* CSS Reset結束  */
+/* 讓內距變得更直覺 */
+*,*::before,*::after{
+	box-sizing:border-box;
+}
+
+/* (RWD用) */
+img{
+	max-width:100%;
+	height:auto;
+}
+/* 從這開始 */
+body{
+    background: #333333;
+}
+.wrap{
+    max-width: 1024px;
+    margin: 0 auto;
+}
+.header{
+    background: #000;
+    transform:scale3d(1,1,1);
+}
+@media(max-width:768px){
+
+}
+/* navbar */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:16px 42px;
+    position: fixed;
+    width: 100%;
+    max-width: 1024px;
+    background:rgba(0,0,0,0.75);
+}
+@media(max-width:767px) {
+    .navbar{
+        padding: 15px;
+    }
+}
+.navbar .logo{
+    display: block;
+    width: 120px;
+    height: 24px;
+    /* 若不支援svg的瀏覽器會看到png版本 */
+    background-image: url(../images/logo_w.png);
+    background-image: url(../images/logo_w@svg.svg);
+    background-repeat: no-repeat;
+    /* 圖片遮擋文字 */
+    text-indent:101%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.navbar ul{
+    display: flex;
+    gap:30px;
+}
+.navbar li a{
+    text-decoration: none;
+    color: #FFFFFF;
+    font-family: MicrosoftJhengHeiRegular;
+    opacity: 100%;
+}
+.navbar li a:hover{
+    color:orange;
+}
+.navbar li a:focus{
+    color: orange;
+}
+/* banner */
+.header .banner{
+    color: #ffffff;
+    background-image: url(../images/header_desktop.png);
+    padding:141.5px 145px;
+}
+@media(max-width:767px){
+    .header .banner{
+        padding:141.5px 0;
+        background-image: url(../images/header_mobile.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+}
+/* introduce */
+.header .introduce{
+    width: 460px;
+    margin: 0 auto;
+    padding:20px 0;
+    background:rgba(0,0,0,0.35);
+}
+@media(max-width:767px){
+    .header .introduce{
+        width: auto;
+    }
+}
+.introduce h2{
+    font-family: MicrosoftJhengHeiRegular;
+    font-size: 36px;
+    color: #FFFFFF;
+    text-align: center;
+    margin-bottom: 16px;
+}
+@media(max-width:767px){
+    .introduce h2{
+        font-size:28px;
+    }
+}
+.introduce p{
+    font-family: MicrosoftJhengHeiRegular;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-align: center;
+    margin-bottom: 6px;
+}
+/* header結束 */
+.container{
+    background: #EFE9E7;
+    padding:50px 0 0;
+}
+/* headline */
+.headline{
+    position: relative;
+    text-align: center;
+    font-size:20px;
+    font-family: MicrosoftJhengHeiRegular;
+    color: #3D1101;
+    line-height: 32px;
+    margin-bottom: 31px;
+}
+.headline::before{
+    height: 1px;
+    width: 25%;
+    border: 1px solid #979797;
+    content: "";
+    position: absolute;
+    top: 40%;
+    left: 10%;
+}
+@media(max-width:767px){
+    .headline::before{
+        top:45%;
+        left: 0;
+    }
+}
+.headline::after{
+    height: 1px;
+    width: 25%;
+    border: 1px solid #979797;
+    content: "";
+    position: absolute;
+    top: 40%;
+    right: 10%;
+}
+@media(max-width:767px){
+    .headline::after{
+        top:45%;
+        right: 0;
+    }
+}
+/* feature */
+.feature{
+    display: flex;
+    justify-content: space-between;
+    padding:62px;
+}
+@media(max-width:768px){
+    .feature{
+        padding:10px 15px 20px;
+    }
+}
+@media(max-width:767px){
+    .feature{
+        padding: 10px;
+        flex-wrap: wrap;
+
+    }
+}
+.featureList{
+    width: 30%;
+    margin: 1%;
+}
+@media(max-width:767px){
+    .featureList{
+        width: 100%;
+        margin: 0 0 2em 0;
+    }
+}
+.featureList img{
+    display: block;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+}
+.featureList h3{
+    font-family: MicrosoftJhengHeiRegular;
+    font-size: 18px;
+    color: #3D1101;
+    text-align: center;
+    margin-bottom: 11px;
+}
+.featureList p{
+    font-family: MicrosoftJhengHeiRegular;
+    color: #3D1101;
+}
+/* chef */
+.chef{
+    background: #3D1101;
+    display: flex;
+    color: #EFE9E7;
+    font-family: MicrosoftJhengHeiRegular;
+    padding:0 42px;
+    margin-bottom: 50px;
+}
+@media(max-width:768px){
+    .chef{
+        padding:0 15px;
+    }
+}
+@media(max-width:767px){
+    .chef{
+        flex-wrap: wrap;
+        padding:10px;
+        margin-bottom: 25px;
+    }
+}
+.article{
+    padding:81px 0 80px 25px;
+}
+@media(max-width:767px){
+    .article{
+        padding:10px 0 0 0;
+    }
+}
+.article h3{
+    font-size: 20px;
+    line-height: 32px;
+}
+.article p{
+    font-size: 20px;
+    color: #EFE9E7;
+    margin-bottom: 1em;
+}
+@media(max-width:767px){
+    .article p{
+        font-size: 16px;
+    }
+}
+/* commet */
+.title{
+    font-family: MicrosoftJhengHeiRegular;
+    font-size: 24px;
+    color: #3D1101;
+    text-align: center;
+    margin-bottom: 1.25em;
+}
+.commet{
+    display: flex;
+    justify-content: space-between;
+    padding:0 42px 50px;
+    font-family: MicrosoftJhengHeiRegular;
+}
+@media(max-width:768px){
+    .commet{
+        padding:0 15px 20px;
+    }
+}
+@media(max-width:767px){
+    .commet{
+        flex-wrap:wrap;
+    }
+}
+.commetItem{
+    display: flex;
+    gap: 13px;
+}
+.commetItem img{
+    border-radius: 50%;
+    width: 67px;
+    height: 67px;
+}
+.commetFont h4{
+    font-family: MicrosoftJhengHeiRegular;
+    font-size: 18px;
+    color: #3D1101;
+    margin-top: 1.1em;
+    margin-bottom: 1.2em;
+}
+.commetFont p{
+    font-family: MicrosoftJhengHeiRegular;
+    font-size: 16px;
+    color: #3D1101;
+    line-height: 24px;
+    margin-bottom: 1em;
+}
+.commetFont h6{
+    font-family: MicrosoftJhengHeiRegular;
+    font-size: 16px;
+    color: rgba(61,17,0,0.75);
+    line-height: 24px;
+    text-align: right;
+}
+/* .map */
+.map{
+    padding:50px 42px;
+    background: #FAFAFA 70%;
+}
+@media(max-width:768px){
+    .map{
+        padding:25px 21px;
+    }
+}
+.mapForm{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+@media(max-width:767px){
+    .mapForm{
+        flex-wrap:wrap;
+    }
+}
+.reserForm{
+    width: 45%;
+}
+@media(max-width:767px){
+    .reserForm{
+        width: 100%;
+    }
+}
+.reserForm label{
+    font-family: PingFangTC-Light;
+    font-size: 14px;
+    color: #3D1101;
+    margin-bottom: 6px;
+    display: block;
+}
+.reserForm input{
+    display: block;
+    margin-bottom: 12px;
+    width: 100%;
+    padding:8px 14px;
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    box-shadow: inset 0px 1px 0px 0px #ECECEC;
+    border-radius: 3px;
+}
+@media(max-width:767px){
+    .reserForm input{
+        
+    }
+}
+.reserForm input:hover{
+    box-shadow : inset 0 0 0 30px #fa0;
+}
+.reserForm input:focus{
+    box-shadow : inset 0 0 0 30px #fa0;
+}
+.reserForm select{
+    width: 100%;
+    padding:8px 10px;
+    margin-bottom: .75em;
+}
+@media(max-width:767px){
+    .reserForm select{
+        margin-bottom: 1.5em;
+    }
+}
+.reserForm .vegan{
+    margin-bottom: 1.75em;
+}
+@media (max-width:767px) {
+    .reserForm .vegan{
+        margin-bottom: 1.5em;
+    }
+}
+.reserForm .vegan input,.reserForm .vegan label{
+    display: inline;
+    padding: 0;
+    margin: 0;
+}
+.reserForm .vegan input{
+    width: 16px;
+    margin-right: 2.5em;
+}
+.reserForm .vegan input:hover{
+    box-shadow: 0 0 10px rgb(255, 226, 182);
+}
+.reserForm .vegan input:focus{
+    box-shadow: 0 0 10px rgb(255, 226, 182);
+
+}
+.reserForm .reset{
+    background: rgba(0,0,0,0.35);
+    border-radius: 3px;
+    font-family: PingFangTC-Regular;
+    font-size: 14px;
+    color: #FFFFFF;
+    width: auto;
+    float:right;
+    margin: 6px;
+    box-shadow: none;
+}
+.reserForm .submit{
+    font-family: PingFangTC-Regular;
+    font-size: 14px;
+    color: #FFFFFF;
+    background: #F56C23;
+    border-radius: 3px;
+    width: auto;
+    float:right;
+    margin-left: 11px;
+    margin: 6px;
+    box-shadow: none;
+}
+/* footer */
+.footer{
+    background: #EFE9E7;
+    padding:50px 42px;
+    display: flex;
+    justify-content: space-between;
+}
+/* 不明原因，如沒有額外推擠會導致網頁看不到footer，需要助教解答，目前感覺像是外層的wrap在iPad版型時沒有將footer也包含在內，導致footer被省略掉 */
+@media(max-width:820px){
+    .footer{
+        padding:25px 21px;
+        padding-bottom: 20em;
+    }
+}
+@media(max-width:767px){
+    .footer{
+        padding:10px 15px;
+        flex-wrap: wrap;
+    }
+}
+.footer h3{
+    font-family: MicrosoftJhengHeiRegular;
+    font-size: 24px;
+    color: #3D1101;
+    margin-bottom: .65em;
+}
+.footer p,.footer a{
+    font-family: MicrosoftJhengHeiRegular;
+    font-size: 16px;
+    color: #3D1101;
+    text-decoration: none;
+}
+.about{
+    width: 27.5%;
+}
+@media(max-width:767px){
+    .about{
+        width: 100%;
+        margin-top: 1em;
+    }
+}
+.about li:hover{
+    background: #3D1101;
+    
+}
+.about li:hover a{
+    color: #EFE9E7;
+}
+
+.contact li{
+   margin-bottom: 10px;
+}
+.contact i{
+    margin-right: 0.5em;
+}
+/* link */
+
+@media(max-width:767px){
+    .link{
+        display: flex;
+        margin-top: .5em;
+    }
+}
+.logo{
+    display: block;
+    margin-bottom: 1.2em;
+}
+
+.social {
+    display: flex;
+    justify-content: flex-end;
+    gap:.75em;
+}
+@media(max-width:767px){
+    .social{
+        margin-top: .75em;
+        width: 50%;
+    }
+}
+.social li a{
+    display: block;
+}
+
+/* cart.html 開始 header,footer沿用 */
+.cart{
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 42px;
+    background: #EFE9E7;
+}
+@media(max-width:768px){
+    .cart{
+        padding:50px 15px;
+    }
+}
+@media(max-width:767px){
+    .cart{
+        padding:15px;
+    }
+}
+.type{
+    width: 20%;
+}
+@media(max-width:768px){
+    .type{
+        width: 23%;
+    }
+}
+.type h2{
+    font-family: MicrosoftJhengHeiRegular;
+    font-size: 20px;
+    color: #3D1101;
+    line-height: 32px;
+    margin-bottom: 0.5em;
+}
+@media(max-width:767px){
+    .type h2{
+        font-size: 18px;
+    }
+}
+.type h2 i{
+    margin-right: 15px;
+}
+@media(max-width:768px){
+    .type h2 i{
+        width: 50%;
+        margin-right: 5px;
+        display: inline;
+    }
+}
+.typeUl{
+    width: 100%;
+}
+.typeUl a{
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    border-bottom:1px solid #3D1101;
+    font-family: MicrosoftJhengHeiRegular;
+    font-size: 16px;
+    color: #3D1101;
+    line-height: 32px;
+    text-indent: .5em;
+}
+@media(max-width:767px){
+    .typeUl a{
+        text-indent: 0;
+    }
+}
+.typeUl a:hover{
+    background: #3D1101;
+    color: #EFE9E7;
+}
+.typeChoose a{
+    background: #3D1101;
+    color: #ffffff;
+}
+/* menu */
+.menu{
+    width: 75%;
+}
+.search{
+    display: flex;
+    margin-bottom: 26px;
+    justify-content: space-between;
+}
+@media(max-width:767px){
+    .search{
+        flex-wrap: wrap;
+    }
+}
+.searchbutton{
+    border: 1px solid #3D1101;
+    width: 70%;
+    border-right: none;
+}
+@media(max-width:767px){
+    .searchbutton{
+        width: 100%;
+        margin-bottom: 1em;
+    }
+}
+.searchbutton input{
+    width: 92.5%;
+    float:left;
+    background: #EFE9E7;
+    padding:6.5px 0;
+    border: 2px solid #3D1101;
+}
+@media(max-width:767px){
+    .searchbutton input{
+        width: 87.5%;
+    }
+}
+.searchbutton input:hover{
+    box-shadow : inset 0 0 0 30px rgb(255, 226, 182);
+}
+.searchbutton input:focus{
+    box-shadow : inset 0 0 0 30px rgb(255, 226, 182);
+}
+.searchbutton button{
+    float:left;
+    background: #501e0c;
+    width: 7.5%;
+    height: 32px;
+}
+@media(max-width:767px){
+    .searchbutton button{
+        width: 12.5%;
+    }
+}
+.searchbutton button:hover{
+    cursor: pointer;
+}
+.search ul{
+    display: flex;
+    align-items: center;
+    padding-right: 21px;
+}
+@media (max-width:767px) {
+    .search ul{
+        width: 100%;
+        padding: 0;
+    }
+}
+.search li a{
+    font-family: MicrosoftJhengHeiRegular;
+    font-size: 16px;
+    color: #3D1101;
+    text-decoration: none;
+    padding:0 12px;
+}
+@media (max-width:767px) {
+    .search li{
+        width: 50%;
+    }   
+    .search li a{
+        display: block;
+        text-align: center;
+    }
+}
+.search li a:hover{
+    background: orange;
+    color: #EFE9E7;
+}
+.x-1{
+    border-right: 1px solid #3D1101;
+}
+.itemList{
+    display: flex;
+    flex-wrap: wrap;
+}
+.item{
+    position: relative;
+    width: 32.3%;
+    margin:0 .5% 30px;
+    box-shadow:3px 3px 4px 0px rgba(0,0,0,0.16);
+    text-align: center;
+    padding-bottom:10px;
+}
+@media(max-width:768px){
+    .item{
+        width: 49%;
+    }
+}
+@media(max-width:767px){
+    .item{
+        width: 99%;
+    }
+}
+.item img{
+    margin-bottom: 11px;
+}
+.item h3{
+    font-family: MicrosoftJhengHeiRegular;
+    font-size: 20px;
+    color: #3D1101;
+    font-weight: 600;
+    line-height: 32px;
+}
+.item h4{
+    font-family: MicrosoftJhengHeiRegular;
+    font-size: 16px;
+    color: #3D1101;
+}
+.item .line{
+    position: absolute;
+    top: 160px;
+    left: 65px;
+    width: 91px;
+    border-bottom:0.5px solid #3D1101;
+}
+@media(max-width:768px){
+    .item .line{
+        top:66%;
+        left: 20%;
+        width: 60%;
+    }
+}
+.item h2{
+    margin: 20px 0 13px;
+    font-family: Roboto-Light;
+    color: #3D1101;
+    font-style: italic;
+    font-size: 20px;
+    font-weight: 600;
+}
+.item .addCart{
+    display: block;
+    font-family: MicrosoftJhengHeiRegular;
+    font-size: 16px;
+    color: #FF5E45;
+    border: 2px solid #FF5E45;
+    border-radius: 3px;
+    padding:3px 49px;
+    margin:0 10px;
+}
+.item .addCart:hover{
+    color: #EFE9E7;
+    background: #FF5E45;
+    
+}
+.itemLove{
+    position: absolute;
+    top: 9px;
+    left: 9px;
+}
+/* login */
+.login{
+    padding-bottom: 1em;
+}
+.loginTitle{
+
+}
+.loginTitle h2{
+    text-align: center;
+    font-family: NotoSansCJKtc-Black;
+    font-size: 48px;
+    color: #3D1101;
+    font-weight: bolder;
+    margin-bottom: 5px;
+    
+}
+.loginTitle h3{
+    text-align: center;
+    font-family: NotoSansCJKtc-Medium;
+    font-size: 20px;
+    color: #3D1101;
+    font-weight: bold;
+    margin-bottom: 35px;
+}
+.loginForm{
+    max-width: 300px;
+    margin: 0 auto;
+    border-top: 3px solid #FF5E45;
+    padding:15px;
+    box-shadow: 3px 3px 4px 0px rgba(0,0,0,0.16);
+}
+.loginForm h3{
+    font-weight: bold;
+    font-family: NotoSansCJKtc-Black;
+    font-size: 18px;
+    color: #3D1101;
+    margin-bottom: 16px;
+    text-align: center;
+}
+.loginForm label{
+    font-family: MicrosoftJhengHeiRegular;
+    font-size: 16px;
+    color: #3D1101;
+}
+.loginForm input{
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    box-shadow: inset 0px 1px 0px 0px #ECECEC;
+    border-radius: 3px;
+    padding:8px;
+}
+.inputEmail,.inputPass{
+    position: relative;
+    margin:3px 0 1px;
+}
+.inputEmail{
+    margin-bottom: 15px;
+}
+.inputEmail i,.inputPass i{
+    position: absolute;
+    left: 9px;
+    top: 10px;
+}
+.inputEmail input,.inputPass input{
+   width: 100%;
+   padding-left: 30px; 
+}
+.inputEmail input:hover,.inputPass input:hover{
+    box-shadow : inset 0 0 0 30px #fa0;
+ }
+ .inputEmail input:focus,.inputPass input:focus{
+    box-shadow : inset 0 0 0 30px #fa0;
+ }
+.forget{
+    text-decoration: none;
+    color: #FF5E45;
+    font-family: MicrosoftJhengHeiRegular;
+    font-size: 14px;
+    margin-bottom: 30px;
+    display: block;
+    width: 70px;
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+.buttons input{
+    width: 125px;
+    line-height: 32px;
+    font-family: PingFangTC-Regular;
+    font-size: 14px;
+    color: #FFFFFF;
+    border-radius: 3px;
+    padding: 0;
+}
+.forget:hover{
+    box-shadow : inset 0 0 0 30px #fa0;
+    color: white;
+}
+.buttons input:hover{
+    background: blue;
+    cursor: pointer;
+}
+.buttons input:focus{
+    background: blue;
+    cursor: pointer;
+}
+.buttons .resign{
+    background: #000000 35%;
+
+}
+.buttons .submit{
+    background: #F56C23 100%;
+}
